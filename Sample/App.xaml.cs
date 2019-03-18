@@ -9,25 +9,25 @@ namespace Sample
 {
     public partial class App : Application
     {
-		public static IServiceProvider Services { get; private set; }
+        public static IServiceProvider Services { get; private set; }
 
-		public App(IServiceCollection serviceCollection)
-		{
-			InitializeComponent();
-            
-			Services = serviceCollection
-				.AddServices()
-				.BuildServiceProvider();
+        public App(IServiceCollection serviceCollection)
+        {
+            InitializeComponent();
 
-			var navigationService = Services.GetRequiredService<INavigationService>();
+            Services = serviceCollection
+                .AddServices()
+                .BuildServiceProvider();
 
-			var rootPage = new NavigationPage();
-			navigationService.Initialize(rootPage);
+            var navigationService = Services.GetRequiredService<INavigationService>();
 
-			MainPage = rootPage;
-		}
+            var rootPage = new NavigationPage();
+            navigationService.Initialize(rootPage);
 
-		protected override void OnStart()
+            MainPage = rootPage;
+        }
+
+        protected override void OnStart()
         {
             // Handle when your app starts
         }

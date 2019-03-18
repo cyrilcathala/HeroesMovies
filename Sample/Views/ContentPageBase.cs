@@ -8,20 +8,20 @@ using Sample.Mvvm;
 namespace Sample.Views
 {
     public class ContentPageBase<TViewModel> : ContentPage where TViewModel : ViewModelBase
-	{
-		public TViewModel ViewModel => (TViewModel)BindingContext;
+    {
+        public TViewModel ViewModel => (TViewModel)BindingContext;
 
-		public ContentPageBase()
-		{
-			On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+        public ContentPageBase()
+        {
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
 
-			SetViewModel();
-		}
+            SetViewModel();
+        }
 
-		private void SetViewModel()
-		{
-			BindingContext = App.Services.GetRequiredService<TViewModel>();
-		}
+        private void SetViewModel()
+        {
+            BindingContext = App.Services.GetRequiredService<TViewModel>();
+        }
 
         protected override void OnAppearing()
         {

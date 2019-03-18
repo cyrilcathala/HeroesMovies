@@ -6,19 +6,19 @@ using Sample.Mvvm;
 namespace Sample.Views
 {
     public class LoginViewModel : ViewModelBase
-	{
-		private readonly INavigationService _navigationService;
+    {
+        private readonly INavigationService _navigationService;
 
-		public LoginViewModel(INavigationService navigationService)
-		{
-			_navigationService = navigationService;
-		}
+        public LoginViewModel(INavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
-		public async Task Login()
-		{
-			await Task.Delay(300);
+        public async Task Login()
+        {
+            await Task.Delay(300);
 
-			await _navigationService.ShowHome();
-		}
-	}
+            await _navigationService.ShowHome();
+        }
+    }
 }

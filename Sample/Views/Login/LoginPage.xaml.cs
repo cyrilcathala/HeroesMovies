@@ -11,12 +11,12 @@ namespace Sample.Views
         {
             InitializeComponent();
 
-			NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
-		private void LoginButton_Clicked(object sender, EventArgs e)
-		{
-			ViewModel.Login();
-		}
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            ViewModel.Login();
+        }
     }
 }

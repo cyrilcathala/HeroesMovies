@@ -5,23 +5,23 @@ using Sample.Views;
 
 namespace Sample
 {
-	public static class ServiceCollectionExtensions
-	{
-		public static IServiceCollection AddServices(this IServiceCollection serviceCollection)
-		{
+    public static class ServiceCollectionExtensions
+    {
+        public static IServiceCollection AddServices(this IServiceCollection serviceCollection)
+        {
 
 #if DEBUG
-			serviceCollection.AddSingleton<IConfiguration, ConfigurationDebug>();
+            serviceCollection.AddSingleton<IConfiguration, ConfigurationDebug>();
 #elif RELEASE
 			serviceCollection.AddSingleton<IConfiguration, ConfigurationRelease>();
 #endif
 
-			serviceCollection.AddSingleton<INavigationService, NavigationService>();
+            serviceCollection.AddSingleton<INavigationService, NavigationService>();
 
-			serviceCollection.AddTransient<LoginViewModel>();
-			serviceCollection.AddTransient<HomeViewModel>();
+            serviceCollection.AddTransient<LoginViewModel>();
+            serviceCollection.AddTransient<HomeViewModel>();
 
-			return serviceCollection;
-		}
-	}
+            return serviceCollection;
+        }
+    }
 }

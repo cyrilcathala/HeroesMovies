@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Sample.Views
 {
-	public partial class HomePage
+    public partial class HomePage
     {
         public HomePage()
         {
