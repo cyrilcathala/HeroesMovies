@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:local="clr-namespace:Sample.Views"
+                       x:Class="Sample.Views.LoginPage"
+                       x:TypeArguments="local:LoginViewModel">
+    <local:DefaultPageTemplate>
+        <StackLayout Margin="12">
+            <Label HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="Login" />
+            <Entry Placeholder="Login"
+                   PlaceholderColor="Lime"
+                   ReturnType="Send" />
+            <Button Text="Login!"
+                    Clicked="LoginButton_Clicked" />
+            <ActivityIndicator IsRunning="true" />
+        </StackLayout>
+        <local:DefaultPageTemplate.Footer>
+            <Label Text="Je suis un footer"
+                   HorizontalOptions="Center"/>
+        </local:DefaultPageTemplate.Footer>
+    </local:DefaultPageTemplate>
+</local:ContentPageBase>
