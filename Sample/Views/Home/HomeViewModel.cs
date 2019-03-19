@@ -5,7 +5,7 @@ using Sample.Navigation;
 
 namespace Sample.Views
 {
-    public class HomeViewModel : ViewModelBase
+    public class HomeViewModel: ViewModelBase
     {
         public HomeViewModel()
         {

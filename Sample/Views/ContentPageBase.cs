@@ -7,7 +7,7 @@ using Sample.Mvvm;
 
 namespace Sample.Views
 {
-    public class ContentPageBase<TViewModel> : ContentPage where TViewModel : ViewModelBase
+    public class ContentPageBase<TViewModel>: ContentPage where TViewModel : ViewModelBase
     {
         public TViewModel ViewModel => (TViewModel)BindingContext;
 

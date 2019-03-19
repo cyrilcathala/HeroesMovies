@@ -1,5 +1,4 @@
-﻿using System;
-namespace Sample
+﻿namespace Sample
 {
     public interface IConfiguration
     {
@@ -9,7 +8,7 @@ namespace Sample
         bool UseMockData { get; }
     }
 
-    public abstract class Configuration : IConfiguration
+    public abstract class Configuration: IConfiguration
     {
         // Configuration obligatoire par environnement
         public abstract string ServiceUrl { get; }

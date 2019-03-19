@@ -15,8 +15,6 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 		Debug|iPhone = Debug|iPhone
 		Release|iPhone = Release|iPhone
-		Ad-Hoc|iPhone = Ad-Hoc|iPhone
-		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A2D558AA-DC41-4D5F-B962-F5626A7D7AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

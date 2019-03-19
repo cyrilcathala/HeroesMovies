@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Sample
 {
-    public class ConfigurationRelease : Configuration
+    public class ConfigurationRelease: Configuration
     {
         public ConfigurationRelease()
         {

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-      x:Class="Sample.Views.DefaultPageTemplate">
-    <!--<ContentView.Content>
-        <Grid>-->
+      x:Class="Sample.Views.DefaultPageTemplate"
+      Visual="Material">
+    
     <Grid.RowDefinitions>
         <RowDefinition Height="*" />
         <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
     
     <Grid.Children>
-        <Frame HasShadow="true"
-               BackgroundColor="#F0F0F0"
-               Margin="12">
+        <Frame Margin="12">
             <ContentView x:Name="ContentContainer" />
         </Frame>
         <Grid Grid.Row="1"
@@ -22,7 +20,6 @@
                 <Label Text="Je suis un footer par défaut !" />
             </ContentView>
         </Grid>
-        <!--</Grid>
-    </ContentView.Content>-->
+        
     </Grid.Children>
 </Grid>

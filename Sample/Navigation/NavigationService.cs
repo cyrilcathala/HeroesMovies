@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Sample.Navigation
 {
-    public class NavigationService : INavigationService
+    public class NavigationService: INavigationService
     {
         private readonly IConfiguration _configuration;
 

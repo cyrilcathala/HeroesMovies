@@ -5,7 +5,7 @@ using Sample.Mvvm;
 
 namespace Sample.Views
 {
-    public class LoginViewModel : ViewModelBase
+    public class LoginViewModel: ViewModelBase
     {
         private readonly INavigationService _navigationService;
 

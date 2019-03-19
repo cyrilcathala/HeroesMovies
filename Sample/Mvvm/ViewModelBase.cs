@@ -2,7 +2,7 @@
 
 namespace Sample.Mvvm
 {
-    public class ViewModelBase : NotificationObject
+    public class ViewModelBase: NotificationObject
     {
         //private LoaderViewModel _loader;
         //public LoaderViewModel Loader

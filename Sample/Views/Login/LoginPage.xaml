@@ -3,7 +3,8 @@
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:local="clr-namespace:Sample.Views"
                        x:Class="Sample.Views.LoginPage"
-                       x:TypeArguments="local:LoginViewModel">
+                       x:TypeArguments="local:LoginViewModel"
+                       BackgroundColor="{StaticResource BlueColor}">
     <local:DefaultPageTemplate>
         <StackLayout Margin="12">
             <Label HorizontalOptions="Center"

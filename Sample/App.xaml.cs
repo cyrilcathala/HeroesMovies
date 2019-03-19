@@ -7,7 +7,7 @@ using Sample.Navigation;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Sample
 {
-    public partial class App : Application
+    public partial class App: Application
     {
         public static IServiceProvider Services { get; private set; }
 

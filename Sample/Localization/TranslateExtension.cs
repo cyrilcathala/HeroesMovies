@@ -7,7 +7,7 @@ using Xamarin.Forms.Xaml;
 namespace Sample.Localization
 {
     [ContentProperty("Text")]
-    public class TranslateExtension : IMarkupExtension
+    public class TranslateExtension: IMarkupExtension
     {
         private const string ResourceId = "Strings";
 

@@ -1,10 +1,5 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,9 +19,13 @@ namespace Sample.Droid
 
 			var serviceCollection = ConfigureServices();
             LoadApplication(new App(serviceCollection));
+
+#if DEBUG
+            XAMLator.Server.PreviewServer.Run();
+#endif
         }
 
-		private IServiceCollection ConfigureServices()
+        private IServiceCollection ConfigureServices()
 		{
 			var serviceCollection = new ServiceCollection();
 
