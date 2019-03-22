@@ -2,6 +2,8 @@
 using Android.Content.PM;
 using Android.OS;
 using Microsoft.Extensions.DependencyInjection;
+using Sample.Droid.Services;
+using Sample.Services;
 
 namespace Sample.Droid
 {
@@ -14,22 +16,21 @@ namespace Sample.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-           
-            global::Xamarin.Forms.Forms.Init(this, bundle);
 
-			var serviceCollection = ConfigureServices();
+            Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
+            Xamarin.Forms.Forms.Init(this, bundle);
+
+            XF.Material.Droid.Material.Init(this, bundle);
+
+            var serviceCollection = ConfigureServices();
             LoadApplication(new App(serviceCollection));
-
-#if DEBUG
-            XAMLator.Server.PreviewServer.Run();
-#endif
         }
 
         private IServiceCollection ConfigureServices()
 		{
 			var serviceCollection = new ServiceCollection();
 
-			// TODO : ajouter des dépendances spécifiques platform
+            serviceCollection.AddSingleton<IKeyboardService, KeyboardService>();
 
 			return serviceCollection;
 		}

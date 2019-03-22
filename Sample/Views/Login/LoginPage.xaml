@@ -2,24 +2,33 @@
 <local:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                        xmlns:local="clr-namespace:Sample.Views"
+                       xmlns:controls="clr-namespace:Sample.Controls"
+                       xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
                        x:Class="Sample.Views.LoginPage"
-                       x:TypeArguments="local:LoginViewModel"
-                       BackgroundColor="{StaticResource BlueColor}">
-    <local:DefaultPageTemplate>
-        <StackLayout Margin="12">
-            <Label HorizontalOptions="Center"
-                   VerticalOptions="Center"
-                   Text="Login" />
-            <Entry Placeholder="Login"
-                   PlaceholderColor="Lime"
-                   ReturnType="Send" />
-            <Button Text="Login!"
-                    Clicked="LoginButton_Clicked" />
-            <ActivityIndicator IsRunning="true" />
+                       x:TypeArguments="local:LoginViewModel">
+    
+    <local:FormPageTemplate>
+        <StackLayout Margin="12"
+                     Spacing="6">
+            
+            <material:MaterialTextField Placeholder="Email"
+                                        Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                        InputType="Email" />
+            
+            <material:MaterialTextField Placeholder="Password"
+                                        Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                        InputType="Password" />
+            
         </StackLayout>
-        <local:DefaultPageTemplate.Footer>
-            <Label Text="Je suis un footer"
-                   HorizontalOptions="Center"/>
-        </local:DefaultPageTemplate.Footer>
-    </local:DefaultPageTemplate>
+        
+        <local:FormPageTemplate.Footer>
+            <StackLayout>
+                <material:MaterialButton Text="LOGIN"
+                                         Margin="32,0"
+                                         Style="{StaticResource DefaultMaterialButtonStyle}"
+                                         Clicked="LoginButton_Clicked"/>
+            </StackLayout>
+        </local:FormPageTemplate.Footer>
+        
+    </local:FormPageTemplate>
 </local:ContentPageBase>

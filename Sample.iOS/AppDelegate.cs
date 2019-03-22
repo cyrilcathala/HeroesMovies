@@ -1,5 +1,7 @@
 ﻿using Foundation;
 using Microsoft.Extensions.DependencyInjection;
+using Sample.iOS.Services;
+using Sample.Services;
 using UIKit;
 
 namespace Sample.iOS
@@ -9,14 +11,13 @@ namespace Sample.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
             Xamarin.Forms.Forms.Init();
 
-			var serviceCollection = ConfigureServices();
-			LoadApplication(new App(serviceCollection));
+            XF.Material.iOS.Material.Init();
 
-#if DEBUG
-            XAMLator.Server.PreviewServer.Run();
-#endif
+            var serviceCollection = ConfigureServices();
+			LoadApplication(new App(serviceCollection));
 
             return base.FinishedLaunching(app, options);
         }
@@ -25,7 +26,7 @@ namespace Sample.iOS
         {
             var serviceCollection = new ServiceCollection();
 
-            // TODO : ajouter des dépendances spécifiques platform
+            serviceCollection.AddSingleton<IKeyboardService, KeyboardService>();
 
             return serviceCollection;
         }

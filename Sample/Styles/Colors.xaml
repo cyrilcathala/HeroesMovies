@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ResourceDictionary x:Class="Sample.Styles.Colors"
                     xmlns="http://xamarin.com/schemas/2014/forms"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:mtrl="clr-namespace:XF.Material.Forms.Resources;assembly=XF.Material.Forms">
     
-    <Color x:Key="BlueColor">#2196F3</Color>
+    <Color x:Key="PrimaryColor">#2196F3</Color>
+    <Color x:Key="SecondaryColor">#E10AEB</Color>
+    <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
     <Color x:Key="WhiteColor">#FFFFFF</Color>
+    <Color x:Key="DefaultTextColor">#333333</Color>
+    
+    <mtrl:MaterialColorConfiguration x:Key="Material.Color"
+        Background="{StaticResource WhiteColor}"
+        Error="#B00020"
+        Primary="{StaticResource PrimaryColor}"
+        PrimaryVariant="{StaticResource PrimaryColor}"
+        Secondary="{StaticResource SecondaryColor}"
+        SecondaryVariant="{StaticResource PrimaryColor}"
+        Surface="#FFFFFF" />
     
 </ResourceDictionary>

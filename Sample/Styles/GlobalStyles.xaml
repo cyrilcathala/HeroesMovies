@@ -2,21 +2,46 @@
 <ResourceDictionary x:Class="Sample.Styles.GlobalStyles"
                     xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                    xmlns:styles="clr-namespace:Sample.Styles">
+                    xmlns:styles="clr-namespace:Sample.Styles"
+                    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+                    xmlns:mtrl="clr-namespace:XF.Material.Forms.Resources;assembly=XF.Material.Forms">
     
     <ResourceDictionary.MergedDictionaries>
         <styles:Colors />
         <styles:FontStyles />
     </ResourceDictionary.MergedDictionaries>
     
-    <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor"
-                Value="SandyBrown" />
+    <mtrl:MaterialConfiguration x:Key="Material.Configuration"
+        ColorConfiguration="{StaticResource Material.Color}"/>
+    
+    <Style TargetType="material:MaterialCard">
+        <Setter Property="BackgroundColor" Value="{StaticResource CardBackgroundColor}"/>
+        <Setter Property="Elevation" Value="5"/>
+        <Setter Property="CornerRadius" Value="16"/>
+        <Setter Property="Padding" Value="0"/>
     </Style>
     
-    <Style TargetType="Frame">
-        <Setter Property="BackgroundColor" Value="{StaticResource WhiteColor}"/>
+    <Style TargetType="material:MaterialButton" 
+           x:Key="DefaultMaterialButtonStyle">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}"/>
+        <Setter Property="HeightRequest" Value="56"/>
+        <Setter Property="CornerRadius" Value="28"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+        <Setter Property="FontSize" Value="{StaticResource LargeFontSize}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
+    
+    <Style TargetType="material:MaterialButton" 
+           BasedOn="{StaticResource DefaultMaterialButtonStyle}"/>
+    
+    <Style TargetType="material:MaterialTextField" 
+           x:Key="DefaultMaterialTextFieldStyle">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="AlwaysShowUnderline" Value="true"/>
+    </Style>
+    
+    <Style TargetType="material:MaterialTextField"
+           BasedOn="{StaticResource DefaultMaterialTextFieldStyle}"/>
     
     <Style TargetType="ActivityIndicator">
         <Setter Property="Scale">

@@ -7,15 +7,18 @@ using Sample.Mvvm;
 
 namespace Sample.Views
 {
-    public class ContentPageBase<TViewModel>: ContentPage where TViewModel : ViewModelBase
+    public class ContentPageBase<TViewModel>: ContentPageBase where TViewModel : ViewModelBase
     {
         public TViewModel ViewModel => (TViewModel)BindingContext;
 
         public ContentPageBase()
         {
-            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
-
             SetViewModel();
+        }
+
+        private void ContentPageBase_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            //SafeAreaInsets
         }
 
         private void SetViewModel()
@@ -35,6 +38,28 @@ namespace Sample.Views
             base.OnDisappearing();
 
             ViewModel.OnDisappearing();
+        }
+    }
+
+    public class ContentPageBase: ContentPage
+    {
+        public static Thickness SafeAreaInsets { get; private set; }
+
+        public ContentPageBase()
+        {
+            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(false);
+
+            PropertyChanged += ContentPageBase_PropertyChanged;
+        }
+
+        private void ContentPageBase_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "SafeAreaInsets")
+            {
+                SafeAreaInsets = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+                Xamarin.Forms.Application.Current.Resources["SafeAreaInsets"] = SafeAreaInsets;
+            }
         }
     }
 }

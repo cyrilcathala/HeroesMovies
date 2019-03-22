@@ -13,6 +13,8 @@
                 <styles:Styles/>
             </ResourceDictionary.MergedDictionaries>
             
+            <Thickness x:Key="SafeAreaInsets"/>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -8,6 +8,93 @@
         <styles:Colors />
     </ResourceDictionary.MergedDictionaries>
     
+    <OnPlatform x:Key="ExtraSmallFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="9" />
+        <On Platform="Android" Value="9" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="SmallerFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="10" />
+        <On Platform="Android" Value="10" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="SmallFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="12" />
+        <On Platform="Android" Value="12" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="MediumFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="14" />
+        <On Platform="Android" Value="14" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="LargeFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="16" />
+        <On Platform="Android" Value="16" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="LargerFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="18" />
+        <On Platform="Android" Value="18" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="BigFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="24" />
+        <On Platform="Android" Value="24" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="ExtraBigFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="30" />
+        <On Platform="Android" Value="32" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="HugeFontSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="32" />
+        <On Platform="Android" Value="48" />
+    </OnPlatform>
+
+    <!--  FontFamily  -->
+    <OnPlatform x:Key="RegularFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="HelveticaNeue" />
+        <On Platform="Android" Value="sans-serif" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="LightFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="HelveticaNeue-Light" />
+        <On Platform="Android" Value="sans-serif-light" />
+    </OnPlatform>
+
+    <OnPlatform x:Key="MediumFontFamily" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="HelveticaNeue-Medium" />
+        <On Platform="Android" Value="sans-serif-medium" />
+    </OnPlatform>
     
+    <!--  Labels  -->
+    <Style x:Key="OverlineLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="FontSize" Value="{StaticResource SmallerFontSize}" />
+    </Style>
+
+    <Style x:Key="CaptionLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
+    </Style>
+
+    <Style x:Key="BodyLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}" />
+    </Style>
+
+    <Style x:Key="HeadlineLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="FontSize" Value="{StaticResource LargeFontSize}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style x:Key="SubheadLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="TextColor" Value="{StaticResource DefaultTextColor}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
     
 </ResourceDictionary>

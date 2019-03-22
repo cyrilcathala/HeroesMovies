@@ -7,7 +7,7 @@ using Sample.Navigation;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Sample
 {
-    public partial class App: Application
+    public partial class App
     {
         public static IServiceProvider Services { get; private set; }
 
@@ -15,16 +15,14 @@ namespace Sample
         {
             InitializeComponent();
 
+            XF.Material.Forms.Material.Init(this, "Material.Configuration");
+
             Services = serviceCollection
                 .AddServices()
                 .BuildServiceProvider();
 
             var navigationService = Services.GetRequiredService<INavigationService>();
-
-            var rootPage = new NavigationPage();
-            navigationService.Initialize(rootPage);
-
-            MainPage = rootPage;
+            navigationService.Initialize();
         }
 
         protected override void OnStart()

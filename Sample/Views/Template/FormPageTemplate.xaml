@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Grid xmlns="http://xamarin.com/schemas/2014/forms"
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-      x:Class="Sample.Views.DefaultPageTemplate"
+      x:Class="Sample.Views.FormPageTemplate"
       xmlns:controls="clr-namespace:Sample.Controls"
       xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms">
     
@@ -9,15 +9,16 @@
         
         <controls:GradientView StartColor="{StaticResource PrimaryColor}"
                                EndColor="{StaticResource SecondaryColor}" />
-    
+        
         <Grid Margin="{DynamicResource SafeAreaInsets}">
             
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             
-            <material:MaterialCard Margin="12">
+            <material:MaterialCard Margin="12,12,12,0"
+                                   VerticalOptions="Start">
                 <ScrollView>
                     <ContentView x:Name="ContentContainer" 
                                  Margin="6"/>
@@ -25,10 +26,14 @@
             </material:MaterialCard>
             
             <Grid Grid.Row="1"
-                  Padding="6,12">
-                <ContentView x:Name="FooterContainer"/>
+                  Padding="6,12"
+                  Margin="0,-44,0,0"
+                  VerticalOptions="Start">
+                <ContentView x:Name="FooterContainer">
+                    <Label Text="Default FOOTER" />
+                </ContentView>
             </Grid>
+                
         </Grid>
     </Grid.Children>
-    
 </Grid>

@@ -5,7 +5,7 @@ namespace Sample.Navigation
 {
     public interface INavigationService
     {
-        void Initialize(NavigationPage navigationPage);
+        void Initialize();
         Task ShowHome();
     }
 }

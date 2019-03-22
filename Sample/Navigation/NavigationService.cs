@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Sample.Views;
-using System.Threading;
 
 namespace Sample.Navigation
 {
@@ -18,10 +17,12 @@ namespace Sample.Navigation
             _configuration = configuration;
         }
 
-        public void Initialize(NavigationPage navigationPage)
+        public void Initialize()
         {
-            _rootPage = navigationPage;
+            _rootPage = new NavigationPage();
             _rootPage.Pushed += RootPage_Pushed;
+
+            Application.Current.MainPage = _rootPage;
 
             if (_configuration.UseLogin)
             {

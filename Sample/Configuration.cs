@@ -10,10 +10,10 @@
 
     public abstract class Configuration: IConfiguration
     {
-        // Configuration obligatoire par environnement
+        // Mandatory configuration by environment tagged abstract
         public abstract string ServiceUrl { get; }
 
-        // Configuration facultative avec valeur par défaut à true
+        // Facultative config with default values tagged virtual
         public virtual bool UseLogin => true;
         public virtual bool UseMockData => false;
     }

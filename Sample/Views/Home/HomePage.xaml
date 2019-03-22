@@ -2,22 +2,30 @@
 <local:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Sample.Views"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              x:Class="Sample.Views.HomePage"
              x:TypeArguments="local:HomeViewModel">
 
-    <NavigationPage.TitleView>
-        <StackLayout BackgroundColor="Teal">
-            <Label Text="This is my TitleView" />
-            <Label Text="I can be a subtitle" 
-                   FontSize="Small"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
-
     <local:DefaultPageTemplate>
     
-        <Label HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Text="Welcome Home!"/>
+        <!--<CollectionView ItemsSource="{Binding Spotlights}">
+            <CollectionView.ItemsLayout>
+                <ListItemsLayout SnapPointsType="MandatorySingle" 
+                                 SnapPointsAlignment="Center">
+                    <x:Arguments>
+                        <ItemsLayoutOrientation>Horizontal</ItemsLayoutOrientation>    
+                    </x:Arguments>
+                </ListItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="12">
+                        <material:MaterialChip Text="{Binding}" 
+                                               BackgroundColor="{StaticResource PrimaryColor}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
         
     </local:DefaultPageTemplate>
 </local:ContentPageBase>
