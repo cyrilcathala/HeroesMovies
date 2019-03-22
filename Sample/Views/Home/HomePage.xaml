@@ -8,9 +8,10 @@
 
     <local:DefaultPageTemplate>
     
-        <!--<CollectionView ItemsSource="{Binding Spotlights}">
+        <CollectionView ItemsSource="{Binding Spotlights}"
+                        VerticalOptions="Start">
             <CollectionView.ItemsLayout>
-                <ListItemsLayout SnapPointsType="MandatorySingle" 
+                <ListItemsLayout SnapPointsType="Mandatory" 
                                  SnapPointsAlignment="Center">
                     <x:Arguments>
                         <ItemsLayoutOrientation>Horizontal</ItemsLayoutOrientation>    
@@ -19,13 +20,19 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="12">
-                        <material:MaterialChip Text="{Binding}" 
-                                               BackgroundColor="{StaticResource PrimaryColor}"/>
-                    </Grid>
+                    <material:MaterialCard Margin="6"
+                                           CornerRadius="24"
+                                           IsClippedToBounds="true">
+                        <StackLayout>
+                            <Image Source="{Binding PosterPath}"
+                                   HeightRequest="200"/>
+                            <Label Style="{StaticResource CaptionLabelStyle}"
+                                   Text="{Binding Title}"/>
+                        </StackLayout>
+                    </material:MaterialCard>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
-        </CollectionView>-->
+        </CollectionView>
         
     </local:DefaultPageTemplate>
 </local:ContentPageBase>

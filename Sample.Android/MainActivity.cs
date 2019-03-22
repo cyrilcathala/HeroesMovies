@@ -20,6 +20,7 @@ namespace Sample.Droid
             Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental");
             Xamarin.Forms.Forms.Init(this, bundle);
 
+            Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
             XF.Material.Droid.Material.Init(this, bundle);
 
             var serviceCollection = ConfigureServices();

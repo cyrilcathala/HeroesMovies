@@ -4,6 +4,7 @@
                        xmlns:local="clr-namespace:Sample.Views"
                        xmlns:controls="clr-namespace:Sample.Controls"
                        xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+                       xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
                        x:Class="Sample.Views.LoginPage"
                        x:TypeArguments="local:LoginViewModel">
     
@@ -11,13 +12,53 @@
         <StackLayout Margin="12"
                      Spacing="6">
             
-            <material:MaterialTextField Placeholder="Email"
-                                        Style="{StaticResource DefaultMaterialTextFieldStyle}"
-                                        InputType="Email" />
+            <iconize:IconImage IconSize="75"
+                               IconColor="{StaticResource PrimaryColor}"
+                               Margin="0,0,0,12"
+                               Icon="mdi-account-circle-outline"/>
             
-            <material:MaterialTextField Placeholder="Password"
-                                        Style="{StaticResource DefaultMaterialTextFieldStyle}"
-                                        InputType="Password" />
+            <controls:Selector ItemsSource="{Binding Options}"
+                               x:Name="FormSelector"
+                               Margin="0,0,0,12">
+                <controls:Selector.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Label}"
+                               Style="{StaticResource CaptionLabelStyle}"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Margin="12,6"/>
+                    </DataTemplate>
+                </controls:Selector.ItemTemplate>
+            </controls:Selector>
+            
+            <Grid>
+                <StackLayout Spacing="6"
+                             x:Name="LoginContainer">
+                    <material:MaterialTextField Placeholder="Email"
+                                                Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                                InputType="Email" />
+                    
+                    <material:MaterialTextField Placeholder="Password"
+                                                Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                                InputType="Password" />
+                </StackLayout>
+                
+                <StackLayout Spacing="6"
+                             x:Name="SignupContainer"
+                             IsVisible="false">
+                    <material:MaterialTextField Placeholder="Email"
+                                                Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                                InputType="Email" />
+                    
+                    <material:MaterialTextField Placeholder="Password"
+                                                Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                                InputType="Password" />
+                    
+                    <material:MaterialTextField Placeholder="Confirm password"
+                                                Style="{StaticResource DefaultMaterialTextFieldStyle}"
+                                                InputType="Password" />
+                </StackLayout>
+            </Grid>
             
         </StackLayout>
         

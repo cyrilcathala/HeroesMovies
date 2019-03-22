@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ResourceDictionary x:Class="Sample.Styles.GlobalStyles"
+<ResourceDictionary x:Class="Sample.Styles.DefaultStyles"
                     xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:styles="clr-namespace:Sample.Styles"
@@ -36,7 +36,7 @@
     
     <Style TargetType="material:MaterialTextField" 
            x:Key="DefaultMaterialTextFieldStyle">
-        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
         <Setter Property="AlwaysShowUnderline" Value="true"/>
     </Style>
     

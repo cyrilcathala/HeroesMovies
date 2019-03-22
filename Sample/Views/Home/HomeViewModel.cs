@@ -1,21 +1,31 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Sample.Mvvm;
-using Sample.Navigation;
+using Sample.Data;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace Sample.Views
 {
     public class HomeViewModel: ViewModelBase
     {
-        public ObservableCollection<string> Spotlights { get; private set; } = new ObservableCollection<string>();
+        private readonly IMoviesRepository _moviesRepository;
 
-        public HomeViewModel()
+        public ObservableCollection<Movie> Spotlights { get; private set; } = new ObservableCollection<Movie>();
+
+        public HomeViewModel(IMoviesRepository moviesRepository)
         {
-            for (int i = 0; i < 100; i++)
-            {
-                Spotlights.Add("Hey");
-            }
+            _moviesRepository = moviesRepository;
+        }
+
+        protected override async Task InitAsync()
+        {
+            Spotlights.Clear();
+
+            var moviesResult = await _moviesRepository.GetMovies();
+
+            if (!moviesResult.IsSuccess) return;
+
+            moviesResult.Content?.ForEach(m => Spotlights.Add(m));
         }
     }
 }

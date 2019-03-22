@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Grid x:Class="Sample.Controls.Selector"
+      xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+      x:Name="This">
+    
+    <Frame BackgroundColor="#f2f2f2"
+           HasShadow="false"
+           x:Name="BackgroundCard"
+           LayoutChanged="BackgroundCard_LayoutChanged"/>
+    
+    <Grid x:Name="GridContainer"
+          VerticalOptions="Center"
+          ColumnSpacing="0">
+        
+        <Grid x:Name="SelectedOption">
+            <material:MaterialButton Style="{StaticResource DefaultMaterialButtonStyle}" />
+            <Label VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   InputTransparent="true"
+                   TextColor="{StaticResource WhiteColor}"
+                   FontSize="{StaticResource SmallFontSize}"
+                   x:Name="SelectedOptionLabel"/>
+        </Grid>
+        
+    </Grid>
+    
+</Grid>

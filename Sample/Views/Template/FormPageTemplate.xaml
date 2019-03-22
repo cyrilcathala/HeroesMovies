@@ -21,13 +21,12 @@
                                    VerticalOptions="Start">
                 <ScrollView>
                     <ContentView x:Name="ContentContainer" 
-                                 Margin="6"/>
+                                 Margin="6,6,6,12"/>
                 </ScrollView>
             </material:MaterialCard>
             
             <Grid Grid.Row="1"
-                  Padding="6,12"
-                  Margin="0,-44,0,0"
+                  Margin="6,-32,6,0"
                   VerticalOptions="Start">
                 <ContentView x:Name="FooterContainer">
                     <Label Text="Default FOOTER" />

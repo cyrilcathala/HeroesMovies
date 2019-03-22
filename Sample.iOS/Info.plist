@@ -36,5 +36,10 @@
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>iconize-jam-icons.ttf</string>
+        <string>iconize-materialdesignicons.ttf</string>
+	</array>
 </dict>
 </plist>

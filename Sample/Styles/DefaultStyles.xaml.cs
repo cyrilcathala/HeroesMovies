@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace Sample.Styles
 {
-    public partial class GlobalStyles
+    public partial class DefaultStyles
     {
-        public GlobalStyles()
+        public DefaultStyles()
         {
             InitializeComponent();
         }

@@ -13,6 +13,9 @@
     <PackageReference Include="XF.Material" Version="1.4.1.1" />
     <PackageReference Include="SkiaSharp" Version="1.68.0" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.0" />
+    <PackageReference Include="LiveXAML" Version="2.1.70" />
+    <PackageReference Include="Xam.Plugin.Iconize.JamIcons" Version="3.5.0.117" />
+    <PackageReference Include="Xam.Plugin.Iconize.MaterialDesignIcons" Version="3.5.0.117" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Configuration.debug.cs">
@@ -30,5 +33,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

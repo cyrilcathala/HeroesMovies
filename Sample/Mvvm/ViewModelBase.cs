@@ -43,6 +43,11 @@ namespace Sample.Mvvm
 
         public virtual Task OnAppearing()
         {
+            return InitAsync();
+        }
+
+        protected virtual Task InitAsync()
+        {
             return Task.CompletedTask;
         }
 

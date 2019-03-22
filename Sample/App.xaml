@@ -9,7 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <styles:Colors />
                 <styles:FontStyles/>
-                <styles:GlobalStyles/>
+                <styles:DefaultStyles/>
                 <styles:Styles/>
             </ResourceDictionary.MergedDictionaries>
             

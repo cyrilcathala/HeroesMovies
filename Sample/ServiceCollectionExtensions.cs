@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Sample.Navigation;
 using Sample.Views;
+using Sample.Data;
 
 namespace Sample
 {
@@ -17,6 +18,7 @@ namespace Sample
 #endif
 
             serviceCollection.AddSingleton<INavigationService, NavigationService>();
+            serviceCollection.AddSingleton<IMoviesRepository, MoviesRepository>();
 
             serviceCollection.AddTransient<LoginViewModel>();
             serviceCollection.AddTransient<HomeViewModel>();

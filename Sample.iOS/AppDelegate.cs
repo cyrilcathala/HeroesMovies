@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using System.Linq;
+using Foundation;
 using Microsoft.Extensions.DependencyInjection;
 using Sample.iOS.Services;
 using Sample.Services;

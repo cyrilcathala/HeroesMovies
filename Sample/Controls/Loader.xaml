@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="Sample.Controls.Loader"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+             x:Name="This">
+    <ContentView.Content>
+        <Grid>
+            <ContentView x:Name="ContentContainer" Opacity="0" />
+
+            <ActivityIndicator x:Name="Loading"
+                               HorizontalOptions="Center"
+                               InputTransparent="True"
+                               VerticalOptions="Center" />
+
+            <ContentView x:Name="ErrorContainer" IsVisible="False">
+                <StackLayout BindingContext="{x:Reference This}" VerticalOptions="Center">
+
+                    <Label HorizontalTextAlignment="Center"
+                           Style="{StaticResource SubheadLabelStyle}"
+                           Text="Oops, an error occurred" />
+                    <Label x:Name="ErrorViewLabel"
+                           HorizontalTextAlignment="Center"
+                           Style="{StaticResource OverlineLabelStyle}"
+                           Text="{Binding LoaderViewModel.ErrorMessage}" />
+                    <material:MaterialButton Margin="0,12,0,0"
+                                             Command="{Binding LoaderViewModel.RefreshCommand}"
+                                             HorizontalOptions="Center"
+                                             ButtonType="Outlined"
+                                             Text="Retry" />
+                </StackLayout>
+            </ContentView>
+
+            <ContentView x:Name="EmptyContainer" IsVisible="False">
+                <Label x:Name="EmptyViewLabel"
+                       BindingContext="{x:Reference This}"
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource BodyLabelStyle}"
+                       Text="{Binding LoaderViewModel.EmptyMessage}"
+                       VerticalOptions="Center" />
+            </ContentView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

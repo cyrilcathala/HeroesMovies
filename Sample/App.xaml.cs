@@ -1,6 +1,5 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Sample.Navigation;
 
@@ -16,6 +15,8 @@ namespace Sample
             InitializeComponent();
 
             XF.Material.Forms.Material.Init(this, "Material.Configuration");
+            Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.JamIconsModule())
+                                  .With(new Plugin.Iconize.Fonts.MaterialDesignIconsModule());
 
             Services = serviceCollection
                 .AddServices()
@@ -23,21 +24,6 @@ namespace Sample
 
             var navigationService = Services.GetRequiredService<INavigationService>();
             navigationService.Initialize();
-        }
-
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
         }
     }
 }
