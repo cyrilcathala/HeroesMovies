@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Microsoft.Extensions.DependencyInjection;
 using Sample.Mvvm;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace Sample.Views
 {
@@ -48,7 +49,7 @@ namespace Sample.Views
         public ContentPageBase()
         {
             Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
-            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(false);
+            On<iOS>().SetUseSafeArea(false);
 
             PropertyChanged += ContentPageBase_PropertyChanged;
         }
@@ -57,7 +58,7 @@ namespace Sample.Views
         {
             if (e.PropertyName == "SafeAreaInsets")
             {
-                SafeAreaInsets = On<Xamarin.Forms.PlatformConfiguration.iOS>().SafeAreaInsets();
+                SafeAreaInsets = On<iOS>().SafeAreaInsets();
                 Xamarin.Forms.Application.Current.Resources["SafeAreaInsets"] = SafeAreaInsets;
             }
         }

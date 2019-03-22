@@ -14,16 +14,13 @@ namespace Sample.Navigation
         /// <param name="page">Page.</param>
         public static async Task PushAndClearAsync(this INavigation navigation, Page page)
         {
-            if (navigation.NavigationStack.Any())
-            {
-                navigation.InsertPageBefore(page, navigation.NavigationStack.First());
-            }
-            else
-            {
-                await navigation.PushAsync(page);
-            }
+            await navigation.PushAsync(page);
 
-            await navigation.PopToRootAsync();
+            foreach (var previousPage in navigation.NavigationStack)
+            {
+                if (previousPage != page)
+                    navigation.RemovePage(previousPage);
+            }
         }
     }
 }
